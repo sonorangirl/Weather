@@ -1,12 +1,12 @@
 
-var base = "http://api.openweathermap.org/data/2.5/weather";
+var base = "https://api.openweathermap.org/data/2.5/weather";
 var lat = "?lat=35";
 var lon = "&lon=139";
 var APIkey = "&appid=392e8e512b039c6ddb7ee382f837b322";
 var units = "&units=metric";
 var city = "";
 
-var api = "http://api.openweathermap.org/data/2.5/weather?lat=33.5&lon=-111.9&appid=392e8e512b039c6ddb7ee382f837b322&units=imperial";
+var api = "https://api.openweathermap.org/data/2.5/weather?lat=33.5&lon=-111.9&appid=392e8e512b039c6ddb7ee382f837b322&units=imperial";
 
 var weatherIcons;
 
