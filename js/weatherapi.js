@@ -19,36 +19,24 @@ $(document).ready(function() {
 		$('.location-name').html(data.name);
 
 		//For Icons
-		$.getJSON('js/weather-icons.json', function(icons) {
-			weatherIcons = icons;
-
-			var prefix = 'wi wi-';
 			var code = data.weather[0].id;
-			var icon = weatherIcons[code].icon;
-			var dorn= "";
+			var prefix = 'wi wi-owm-';
+			var timeOfDay = "";
 
-
-			// If we are not in the ranges mentioned above, add a day/night prefix.
-			// if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
-			// 	icon = 'day-' + icon;
-			// }
 			var today = new Date();
 			var hour = today.getHours();
 
 			if (hour > 6 && hour < 20) {
-			    //Day time
-			   dorn = "day-";
+			   timeOfDay = "day-"; //Day time
 
 			} else {
-			    //Night time
-			   dorn ="night-";
+			   timeOfDay ="night-"; //Night time
 			}
 
-			// Finally tack on the prefix.
-			icon = prefix + dorn + icon;
-			$('.main-icon').html('<i class="' + icon + '"></i>');
-		});
+			var icon = prefix + timeOfDay + code;
 
+		$('.main-icon').html('<i class="' + icon + '"></i>');
+			
 	});
 
 });
@@ -70,3 +58,10 @@ $(document).ready(function() {
 	//Make error message if location requested not found
 
 	//Make function to fade in new blended header when weather changes upon location change
+
+
+
+
+
+
+
