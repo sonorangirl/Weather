@@ -22,7 +22,7 @@ $(document).ready(function() {
 		$.getJSON('js/weather-icons.json', function(icons) {
 			weatherIcons = icons;
 
-			var prefix = 'wi wi-owm-';
+			var prefix = 'wi wi-';
 			var code = data.weather[0].id;
 			var icon = weatherIcons[code].icon;
 
