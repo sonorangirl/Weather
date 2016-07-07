@@ -24,22 +24,22 @@ function callCityAPI() {
 
 $(document).ready(function() {
 	//Get users Location information
-	var req = $.getJSON("https://crossorigin.me/http://ip-api.com/json/?callback=?", function(data) {
-		lat += "?lat=" + data.lat;
-		lon += "&lon=" + data.lon;
-		console.log(lat, lon);
-		callGeoAPI();
-	});
-
-	//Get users Location info
-	// function success(pos) {
-	// 	lat += pos.coords.latitude;
-	// 	lon += pos.coords.longitude;
+	// var req = $.getJSON("https://crossorigin.me/http://ip-api.com/json/?callback=?", function(data) {
+	// 	lat += "?lat=" + data.lat;
+	// 	lon += "&lon=" + data.lon;
 	// 	console.log(lat, lon);
 	// 	callGeoAPI();
+	// });
 
-	// }
-	// navigator.geolocation.getCurrentPosition(success);
+	//Get users Location info
+	function success(pos) {
+		lat += pos.coords.latitude;
+		lon += pos.coords.longitude;
+		console.log(lat, lon);
+		callGeoAPI();
+
+	}
+	navigator.geolocation.getCurrentPosition(success);
 
 	
 	//call OpenWeather api 
