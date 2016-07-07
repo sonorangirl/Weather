@@ -24,7 +24,7 @@ function callCityAPI() {
 
 $(document).ready(function() {
 	//Get users Location information
-	var req = $.getJSON("http://ip-api.com/json/?callback=?", function(data) {
+	var req = $.getJSON("https://crossorigin.me/http://ip-api.com/json/?callback=?", function(data) {
 		lat += "?lat=" + data.lat;
 		lon += "&lon=" + data.lon;
 		console.log(lat, lon);
