@@ -243,13 +243,14 @@ $(document).ready(function() {
 
 	//Allow user to change units
 	function toCelsius() {
-		var oldTemperature = $('.current-temp').val();
+		var oldTemperature = $('.current-temp').html();
 		newTemperature = (Number(oldTemperature)  -  32)  *  (5 / 9);
 		$('.current-temp').html(newTemperature);
+		console.log(newTemperature);
 	}
 
 	function toFahrenheit() {
-		var oldTemperature = $('.current-temp').val();
+		var oldTemperature = $('.current-temp').html();
 		newTemperature = Number(oldTemperature)  *  (9 / 5) + 32;
 		$('.current-temp').html(newTemperature);
 	}
@@ -269,14 +270,16 @@ $(document).ready(function() {
 //TO DO 
 	
 	//Add fallback if geolocation data unavailable
+
+	//Make error message if location requested not found
+
 	
 
 	//Make another api call to get weather data for next four days
 
 	//Make function to update days of the week
 
-	//Make error message if location requested not found
-
+	
 
 
 
