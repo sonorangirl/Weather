@@ -38,12 +38,12 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li id="nav-about"><a href="#about">About this Project</a></li>
                         <li id="nav-degree">
-                            <div class="btn-group" data-toggle="buttons">
-                                <label class="btn btn-primary active">
-                                    <input type="radio" name="units" id="Fahrenheit" autocomplete="off" checked>°F
+                            <div class="btn-group" id="temp-units" data-toggle="buttons">
+                                <label id="Fahrenheit" class="btn btn-primary active">
+                                    <input type="radio" name="units" id="F" autocomplete="off" checked>°F
                                 </label>
-                                <label class="btn btn-primary">
-                                    <input type="radio" name="units" id="Celsius" autocomplete="off">°C
+                                <label id="Celsius" class="btn btn-primary">
+                                    <input type="radio" name="units" id="C" autocomplete="off">°C
                                 </label>
                             </div>
                         </li>
@@ -72,7 +72,7 @@
                             <h3 class="panel-title main-icon">Icon Here</h3>
                         </div>
                         <div class="panel-body temperature">
-                            <p class="centered current-temp">Current Temp Here</p>
+                            <p class="centered current-temp">107&deg;</p>
                         </div>
                         <div class="panel-footer location">
                             <h4 class="centered location-name">Location Here</h4>
@@ -158,7 +158,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/weatherapi.js"></script>
+    <script src="js/units.js"></script>
+    <script src="js/weatherapi.js"></script> 
     
         
     </script>

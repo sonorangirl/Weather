@@ -241,27 +241,27 @@ $(document).ready(function() {
 	//Get lat and lon, use to create API call with success callback
 	navigator.geolocation.getCurrentPosition(success);
 
-	//Allow user to change units
-	function toCelsius() {
-		var oldTemperature = $('.current-temp').html();
-		newTemperature = (Number(oldTemperature)  -  32)  *  (5 / 9);
-		$('.current-temp').html(newTemperature);
-		console.log(newTemperature);
-	}
+	// //Allow user to change units
+	// function toCelsius() {
+	// 	var oldTemperature = $('.current-temp').val();
+	// 	newTemperature = (Number(oldTemperature)  -  32)  *  (5 / 9);
+	// 	$('.current-temp').html(newTemperature);
+	// 	console.log(newTemperature);
+	// }
 
-	function toFahrenheit() {
-		var oldTemperature = $('.current-temp').html();
-		newTemperature = Number(oldTemperature)  *  (9 / 5) + 32;
-		$('.current-temp').html(newTemperature);
-	}
+	// function toFahrenheit() {
+	// 	var oldTemperature = $('.current-temp').val();
+	// 	newTemperature = Number(oldTemperature)  *  (9 / 5) + 32;
+	// 	$('.current-temp').html(newTemperature);
+	// }
 
-	//Change units when user clicks options
-	$('#Celsius').click(function() {
-		toCelsius();
-	});
-	$('#Fahrenheit').click(function() {
-		toFahrenheit();
-	});
+	// //Change units when user clicks options
+	// $('[type=radio]').click(function() {
+	// 	toCelsius();
+	// });
+	// $('[type=radio]#Fahrenheit').click(function() {
+	// 	toFahrenheit();
+	// });
 
 
 
