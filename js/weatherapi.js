@@ -7,8 +7,9 @@ var units = "&units=imperial";
 var cityName = "";
 var city = "?q=" + cityName;
 var api = "";
-// var api = "https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?lat=33.5&lon=-111.9&appid=392e8e512b039c6ddb7ee382f837b322&units=imperial";
 var weatherIcons;
+var newTemperature;
+
 
 //creates geolocated api call
 function callGeoAPI() {
@@ -220,7 +221,7 @@ $(document).ready(function() {
 			};
 			var currentTemp = Math.round(data.main.temp).toString(); //gets temperature, rounds it, then makes it a string
 			console.log(currentTemp);
-			var tempColor = tempColorMap[currentTemp];
+			var tempColor = tempColorMap[currentTemp]; //gets hexcode color for the current temp
 			console.log(tempColor);
 			$('body, html').css('background-color', tempColor);
 				
@@ -240,6 +241,29 @@ $(document).ready(function() {
 	//Get lat and lon, use to create API call with success callback
 	navigator.geolocation.getCurrentPosition(success);
 
+	//Allow user to change units
+	function toCelsius() {
+		var oldTemperature = $('.current-temp').val();
+		newTemperature = (Number(oldTemperature)  -  32)  *  (5 / 9);
+		$('.current-temp').html(newTemperature);
+	}
+
+	function toFahrenheit() {
+		var oldTemperature = $('.current-temp').val();
+		newTemperature = Number(oldTemperature)  *  (9 / 5) + 32;
+		$('.current-temp').html(newTemperature);
+	}
+
+	//Change units when user clicks options
+	$('#Celsius').click(function() {
+		toCelsius();
+	});
+	$('#Fahrenheit').click(function() {
+		toFahrenheit();
+	});
+
+
+
 });
 
 //TO DO 
@@ -251,11 +275,8 @@ $(document).ready(function() {
 
 	//Make function to update days of the week
 
-	//Make function to let users switch between F and C 
-
 	//Make error message if location requested not found
 
-	//Make function to fade in new blended header when weather changes upon location change
 
 
 
