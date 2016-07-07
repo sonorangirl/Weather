@@ -33,8 +33,8 @@ $(document).ready(function() {
 
 	//Get users Location info
 	function success(pos) {
-		lat += pos.coords.latitude;
-		lon += pos.coords.longitude;
+		lat += "?lat=" + pos.coords.latitude;
+		lon += "&lon=" + pos.coords.longitude;
 		console.log(lat, lon);
 		callGeoAPI();
 
