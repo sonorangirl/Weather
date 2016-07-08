@@ -23,6 +23,12 @@ function callCityAPI() {
 	console.log(api);
 }
 
+//Changes Location to City Parameter
+$('#cityName').click(function() {
+
+
+});
+
 $(document).ready(function() {
 
 	function getOpenWeatherData() {
@@ -223,7 +229,8 @@ $(document).ready(function() {
 			console.log(currentTemp);
 			var tempColor = tempColorMap[currentTemp]; //gets hexcode color for the current temp
 			console.log(tempColor);
-			$('body, html').css('background-color', tempColor);
+			$('body, html, .panel-footer').css('background-color', tempColor);
+			$('.text-muted, i.wi').css('color', tempColor);
 				
 		});
 	}
@@ -240,28 +247,6 @@ $(document).ready(function() {
 
 	//Get lat and lon, use to create API call with success callback
 	navigator.geolocation.getCurrentPosition(success);
-
-	// //Allow user to change units
-	// function toCelsius() {
-	// 	var oldTemperature = $('.current-temp').val();
-	// 	newTemperature = (Number(oldTemperature)  -  32)  *  (5 / 9);
-	// 	$('.current-temp').html(newTemperature);
-	// 	console.log(newTemperature);
-	// }
-
-	// function toFahrenheit() {
-	// 	var oldTemperature = $('.current-temp').val();
-	// 	newTemperature = Number(oldTemperature)  *  (9 / 5) + 32;
-	// 	$('.current-temp').html(newTemperature);
-	// }
-
-	// //Change units when user clicks options
-	// $('[type=radio]').click(function() {
-	// 	toCelsius();
-	// });
-	// $('[type=radio]#Fahrenheit').click(function() {
-	// 	toFahrenheit();
-	// });
 
 
 
