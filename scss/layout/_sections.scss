@@ -2,10 +2,36 @@
 // Section Styles
 // ==========================================================================
 
+
+
+//Main Panel
 .main {
 	max-width: 600px;
 }
 
-.temperature p, .location p {
+.current-temp, .location-name {
+	font-size: 2em;
+}
+
+.temperature p {
 	color: $color-shadow;
 }
+
+.location h4 {
+	color: $color-light;
+}
+
+.panel-footer {
+	background-color: $color-secondary;
+}
+
+
+
+
+//Forecast Panels
+
+//Don' show forecast boxes unless they have data
+.week-forecast {
+	display: none;
+}
+

@@ -32,7 +32,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Change Location</a>
+                    <a class="navbar-brand" href="#" data-toggle="modal" data-target="#changeCity">Change Location</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -53,6 +53,33 @@
             </div>
         </nav>
 
+        <div class="modal fade" id="changeCity" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Enter your City</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Where Are You?">
+                            </div>
+                        </div>
+                        <button id="cityName" type="button" class="btn btn-primary" data-dismiss="modal">Change Location</button>
+                    </form>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div> <!--End Modal-->
+
+
         <!-- Begin page content -->
         <div class="container-fluid">
       
@@ -69,13 +96,13 @@
                 <div class="col-xs-8 centered icon">
                     <div class="panel panel-secondary main centered">
                         <div class="panel-heading icon">
-                            <h3 class="panel-title main-icon">Icon Here</h3>
+                            <h3 class="panel-title main-icon"><img class="loading-icon" style="height:80px;width:80px;" src="img/ripple.gif"></h3>
                         </div>
                         <div class="panel-body temperature">
-                            <p class="centered current-temp">107&deg;</p>
+                            <p class="centered current-temp">Getting your Weather...</p>
                         </div>
                         <div class="panel-footer location">
-                            <h4 class="centered location-name">Location Here</h4>
+                            <h4 class="centered location-name">Location</h4>
                         </div>
                     </div>
                 </div>
@@ -83,7 +110,7 @@
             </div>
                 
 
-            <div class="row">
+            <div class="row week-forecast">
 
                 <div class="col-xs-6 col-sm-3 forecast">
                     <div class="panel panel-secondary">
@@ -148,7 +175,7 @@
 
         <footer class="footer">
             <div class="container">
-                <p class="text-muted">Place sticky footer content here.</p>
+                <p class="text-muted">Snarky Comment about the Weather</p>
             </div>
         </footer>
 

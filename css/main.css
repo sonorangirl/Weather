@@ -53,8 +53,7 @@ body {
   height: 100%;
   font-family: "Fjalla One", sans-serif;
   background-color: #068D9D;
-  /* Margin bottom by footer height */
-  margin-bottom: 60px; }
+  /* Margin bottom by footer height */ }
 
 h1,
 h2,
@@ -62,7 +61,7 @@ h3,
 h4,
 h5 {
   font-family: "Fjalla One", sans-serif;
-  color: #A4D4D8;
+  color: #FFF6F4;
   text-align: center; }
 
 p {
@@ -96,6 +95,8 @@ body > .container-fluid {
   font-weight: 400; }
   .navbar-default .navbar-brand:hover {
     color: #A4D4D8; }
+  .navbar-default .navbar-brand:focus {
+    color: #FFF6F4; }
 .navbar-default .navbar-nav > li > a {
   color: #FFF6F4;
   font-weight: 500;
@@ -126,20 +127,36 @@ body > .container-fluid {
 .main {
   max-width: 600px; }
 
-.temperature p, .location p {
+.current-temp, .location-name {
+  font-size: 2em; }
+
+.temperature p {
   color: #757780; }
 
+.location h4 {
+  color: #FFF6F4; }
+
+.panel-footer {
+  background-color: #A4D4D8; }
+
+.week-forecast {
+  display: none; }
+
 .footer {
-  position: relative;
+  position: absolute;
   bottom: 0;
   width: 100%;
+  text-align: center;
   /* Set the fixed height of the footer here */
   height: 60px;
   clear: both;
   padding-top: 20px;
-  background-color: #068D9D; }
+  background-color: white; }
   .footer p {
     color: #A4D4D8; }
+
+.main-icon {
+  font-size: 4em; }
 
 @media print {
   * {

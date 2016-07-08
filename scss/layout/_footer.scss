@@ -3,14 +3,15 @@
 // ==========================================================================
 
 .footer {
-	position: relative;
+	  position: absolute;
     bottom: 0;
   	width: 100%;
+    text-align: center;
   	/* Set the fixed height of the footer here */
- 	height: 60px;
- 	clear: both;
+ 	  height: 60px;
+ 	  clear: both;
   	padding-top: 20px;
-  	background-color: $color-primary;
+  	background-color: white;
   	
   	p {
   		color: $color-secondary;

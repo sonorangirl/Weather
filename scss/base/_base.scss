@@ -20,7 +20,6 @@ body {
   font-family: $font-family--primary;
   background-color: $color-primary;
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
 }
 
 h1,
@@ -29,7 +28,7 @@ h3,
 h4,
 h5 {
   font-family: $font-family--primary;
-  color: $color-secondary;
+  color: $color-light;
   text-align: center;
 }
 

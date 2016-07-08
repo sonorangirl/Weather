@@ -25,6 +25,10 @@
       &:hover {
         color: $color-secondary;
       }
+
+      &:focus {
+        color: $color-light;
+      }
   }
 
   .navbar-nav {
