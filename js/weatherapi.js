@@ -229,8 +229,9 @@ $(document).ready(function() {
 			console.log(currentTemp);
 			var tempColor = tempColorMap[currentTemp]; //gets hexcode color for the current temp
 			console.log(tempColor);
-			$('body, html, .panel-footer').css('background-color', tempColor);
-			$('.text-muted, i.wi').css('color', tempColor);
+			$('body, html').css('background-color', tempColor);
+			$('.text-muted, i.wi, .current-temp').css('color', tempColor);
+			$('.panel-footer').css('background-color', '#ffffff');
 				
 		});
 	}
