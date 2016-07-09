@@ -23,12 +23,28 @@ $(document).ready(function() {
 	$('#temp-units label[id="Celsius"]').click(function() {
 		if (unitStatus === "F") {
 			changeUnits();
+			$('#Fahrenheit').css({
+				'background-color': '#ffffff',
+				'color': tempColor
+			});
+			$('#Celsius.active').css({
+				'background-color': tempColor,
+				'color': '#ffffff'
+			});
 		}
 	});
 
 	$('#temp-units label[id="Fahrenheit"]').click(function() {
 		if (unitStatus === "C") {
 			changeUnits();
+			$('#Celsius').css({
+				'background-color': '#ffffff',
+				'color': tempColor
+			});
+			$('#Fahrenheit.active').css({
+				'background-color': tempColor,
+				'color': '#ffffff'
+			});
 		}
 	});
 

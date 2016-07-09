@@ -70,7 +70,7 @@
     border-color: $color-light;
 
       &:hover, &:focus {
-        background-color: $color-secondary;
+        background-color: $color-shadow;
       }
 
 
@@ -83,7 +83,7 @@
   }
 
   .navbar-collapse.collapse.in ul {
-    background-color: $color-secondary;
+    background-color: $color-shadow;
   }
     
 } //end .navbar-default

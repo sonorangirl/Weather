@@ -8,6 +8,7 @@ var api = "";
 var city = "";
 var weatherIcons;
 var newTemperature;
+var tempColor = "";
 
 
 //creates geolocated api call
@@ -42,6 +43,7 @@ $(document).ready(function() {
 
 				var today = new Date();
 				var hour = today.getHours();
+				console.log(hour);
 
 				if (hour > 6 && hour < 20) {
 					timeOfDay = "day-"; //Day time
@@ -230,7 +232,7 @@ $(document).ready(function() {
 			}
 			currentTemp = currentTemp.toString();
 			console.log(currentTemp);
-			var tempColor = tempColorMap[currentTemp]; //gets hexcode color for the current temp
+			tempColor = tempColorMap[currentTemp]; //gets hexcode color for the current temp
 			console.log(tempColor);
 			$('body, html').css('background-color', tempColor);
 			$('.text-muted, i.wi, .current-temp, .location-name').css('color', tempColor);
@@ -238,6 +240,44 @@ $(document).ready(function() {
 				'background-color': '#ffffff',
 				'border-top-color': tempColor
 			});
+
+			//Degree Units Toggle
+			$('#Fahrenheit, #Celsius').css({
+				'background-color': '#ffffff',
+				'color': tempColor,
+				'border-color': tempColor
+			});
+			$('#Fahrenheit.active, #Celsius.active').css({
+				'background-color': tempColor,
+				'color': '#ffffff',
+				'border-color': tempColor
+			});
+
+			$('#temp-units label[id="Celsius"]').click(function() {
+				$('#Fahrenheit').css({
+					'background-color': '#ffffff',
+					'color': tempColor
+				});
+				$('#Celsius').css({
+					'background-color': tempColor,
+					'color': '#ffffff'
+				});
+			});
+
+			$('#temp-units label[id="Fahrenheit"]').click(function() {
+				$('#Celsius').css({
+					'background-color': '#ffffff',
+					'color': tempColor
+				});
+				$('#Fahrenheit').css({
+					'background-color': tempColor,
+					'color': '#ffffff'
+				});
+			});
+
+			//Small screen collapsed nav
+			$('.navbar-default.navbar-toggle:hover, .navbar-default.navbar-toggle:focus').css('background-color', tempColor);
+
 
 			//Change footer text
 			var tempRange = data.main.temp;

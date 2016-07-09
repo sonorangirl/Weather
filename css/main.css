@@ -116,12 +116,12 @@ body > .container-fluid {
 .navbar-default .navbar-toggle {
   border-color: #FFF6F4; }
   .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background-color: #A4D4D8; }
+    background-color: #757780; }
   .navbar-default .navbar-toggle .icon-bar {
     color: #FFF6F4;
     background-color: #FFF6F4; }
 .navbar-default .navbar-collapse.collapse.in ul {
-  background-color: #A4D4D8; }
+  background-color: #757780; }
 
 /* .solid class attached on scroll past first section */
 .main {
@@ -177,6 +177,16 @@ body > .container-fluid {
   .btn-secondary:hover {
     background-color: #FFF6F4;
     color: #A4D4D8; }
+
+#temp-units {
+  padding: 16px; }
+  #temp-units #Fahrenheit, #temp-units #Celsius {
+    background-color: #FFF6F4;
+    color: #A4D4D8;
+    border-color: #A4D4D8; }
+  #temp-units #Fahrenheit.active, #temp-units #Celsius.active {
+    background-color: #A4D4D8;
+    color: #FFF6F4; }
 
 @media print {
   * {

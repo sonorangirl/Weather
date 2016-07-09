@@ -26,3 +26,20 @@
 
 	}
 }
+
+
+//Units Button Group
+#temp-units {
+	padding: 16px;
+
+	#Fahrenheit, #Celsius {
+		background-color: $color-light;
+		color: $color-secondary;
+		border-color: $color-secondary;
+	}
+
+	#Fahrenheit.active, #Celsius.active {
+			background-color: $color-secondary;
+			color: $color-light;
+		}
+}
