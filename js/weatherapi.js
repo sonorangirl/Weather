@@ -163,8 +163,8 @@ $(document).ready(function() {
 				"78": "#D1EC60",
 				"79": "#D1EC60",
 				//Hot Oranges/Reds
-				"80": "#EAF358",
-				"81": "#EAF358",
+				"80": "#E1E057",
+				"81": "#E1E057",
 				"82": "#F2D54E",
 				"83": "#F2D54E",
 				"84": "#F1BB44",
@@ -220,7 +220,15 @@ $(document).ready(function() {
 
 			};
 
-			var currentTemp = Math.round(data.main.temp).toString(); //gets temperature, rounds it, then makes it a string
+			var currentTemp = Math.round(data.main.temp); //gets temperature, rounds it
+			
+			//If values are outside of color map range, set them equal to max/min values
+			if (currentTemp < -21) {
+				currentTemp = -21;
+			} else if (currentTemp > 131) {
+				currentTemp = 131;
+			}
+			currentTemp = currentTemp.toString();
 			console.log(currentTemp);
 			var tempColor = tempColorMap[currentTemp]; //gets hexcode color for the current temp
 			console.log(tempColor);
