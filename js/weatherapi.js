@@ -225,13 +225,34 @@ $(document).ready(function() {
 				"131": "#FF14D3"
 
 			};
+
 			var currentTemp = Math.round(data.main.temp).toString(); //gets temperature, rounds it, then makes it a string
 			console.log(currentTemp);
 			var tempColor = tempColorMap[currentTemp]; //gets hexcode color for the current temp
 			console.log(tempColor);
 			$('body, html').css('background-color', tempColor);
-			$('.text-muted, i.wi, .current-temp').css('color', tempColor);
+			$('.text-muted, i.wi, .current-temp, .location-name').css('color', tempColor);
 			$('.panel-footer').css('background-color', '#ffffff', 'border-top', tempColor);
+
+			//Change footer text
+			var tempRange = data.main.temp;
+			if (tempRange < 20) {
+				$('.text-muted').html('Error....frozen...');
+			} else if (tempRange >= 20 && tempRange < 40) {
+				$('.text-muted').html('Damn its cold');
+			} else if (tempRange >= 40 && tempRange < 60) {
+				$('.text-muted').html('Brrrrrrr.....');
+			} else if (tempRange >= 60 && tempRange < 80) {
+				$('.text-muted').html('Lovely weather we\'re having');
+			} else if (tempRange >= 80 && tempRange < 90) {
+				$('.text-muted').html('At least its not above 90');
+			} else if (tempRange >= 90 && tempRange < 100) {
+				$('.text-muted').html('Yikes its hot outside!');
+			} else if (tempRange >= 100 && tempRange < 110) {
+				$('.text-muted').html('Danger Will Robinson, you\'re melting!');
+			} else if (tempRange >= 110) {
+				$('.text-muted').html('I think you may be on Venus?');
+			}
 				
 		});
 	}
