@@ -13,21 +13,16 @@ var newTemperature;
 
 //creates geolocated api call
 function callGeoAPI() {
-	api += base + lat + lon + APIkey + units;
+	api = base + lat + lon + APIkey + units;
 	console.log(api);
 }
 
 //creates City Name api call
 function callCityAPI() {
-	api += base + city + APIkey + units;
+	api = base + city + APIkey + units;
 	console.log(api);
 }
 
-//Changes Location to City Parameter
-$('#cityName').click(function() {
-
-
-});
 
 $(document).ready(function() {
 
@@ -232,7 +227,10 @@ $(document).ready(function() {
 			console.log(tempColor);
 			$('body, html').css('background-color', tempColor);
 			$('.text-muted, i.wi, .current-temp, .location-name').css('color', tempColor);
-			$('.panel-footer').css('background-color', '#ffffff', 'border-top', tempColor);
+			$('.panel-footer').css({
+				'background-color': '#ffffff',
+				'border-top': tempColor
+			});
 
 			//Change footer text
 			var tempRange = data.main.temp;
@@ -270,6 +268,13 @@ $(document).ready(function() {
 	//Get lat and lon, use to create API call with success callback
 	navigator.geolocation.getCurrentPosition(success);
 
+	//Changes Location to City Parameter and calls API again
+	$('#cityName').click(function() {
+		cityName = $('input:text').val();
+		console.log(cityName);
+		callCityAPI();
+		getOpenWeatherData();
+	});
 
 
 });

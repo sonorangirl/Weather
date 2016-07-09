@@ -139,6 +139,9 @@ body > .container-fluid {
 .panel-footer {
   background-color: #A4D4D8; }
 
+.modal-title {
+  color: #068D9D; }
+
 .week-forecast {
   display: none; }
 
