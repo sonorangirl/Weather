@@ -159,7 +159,8 @@ body > .container-fluid {
     color: #A4D4D8; }
 
 .main-icon {
-  font-size: 4em; }
+  font-size: 4em;
+  margin-top: 3%; }
 
 #cityName {
   background-color: #068D9D;

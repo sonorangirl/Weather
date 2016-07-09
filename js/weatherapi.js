@@ -4,9 +4,8 @@ var lat = "";
 var lon = "";
 var APIkey = "&appid=392e8e512b039c6ddb7ee382f837b322";
 var units = "&units=imperial";
-var cityName = "";
-var city = "?q=" + cityName;
 var api = "";
+var city = "";
 var weatherIcons;
 var newTemperature;
 
@@ -229,7 +228,7 @@ $(document).ready(function() {
 			$('.text-muted, i.wi, .current-temp, .location-name').css('color', tempColor);
 			$('.panel-footer').css({
 				'background-color': '#ffffff',
-				'border-top': tempColor
+				'border-top-color': tempColor
 			});
 
 			//Change footer text
@@ -270,8 +269,9 @@ $(document).ready(function() {
 
 	//Changes Location to City Parameter and calls API again
 	$('#cityName').click(function() {
-		cityName = $('input:text').val();
-		console.log(cityName);
+		var cityName = $('input:text').val();
+		city = "?q=" + cityName;
+		console.log(city);
 		callCityAPI();
 		getOpenWeatherData();
 	});
