@@ -231,7 +231,7 @@ $(document).ready(function() {
 			console.log(tempColor);
 			$('body, html').css('background-color', tempColor);
 			$('.text-muted, i.wi, .current-temp').css('color', tempColor);
-			$('.panel-footer').css('background-color', '#ffffff');
+			$('.panel-footer').css('background-color', '#ffffff', 'border-top', tempColor);
 				
 		});
 	}

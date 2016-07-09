@@ -158,6 +158,22 @@ body > .container-fluid {
 .main-icon {
   font-size: 4em; }
 
+#cityName {
+  background-color: #068D9D;
+  color: #FFF6F4;
+  border-color: #068D9D; }
+  #cityName:hover {
+    background-color: #FFF6F4;
+    color: #068D9D; }
+
+.btn-secondary {
+  background-color: #A4D4D8;
+  color: #FFF6F4;
+  border-color: #A4D4D8; }
+  .btn-secondary:hover {
+    background-color: #FFF6F4;
+    color: #A4D4D8; }
+
 @media print {
   * {
     background: transparent !important;
