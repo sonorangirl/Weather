@@ -300,28 +300,28 @@ $(document).ready(function() {
 	}
 
 	//Get users Location info - Using users browser
-		// function success(pos) {
-		// 	lat += "?lat=" + pos.coords.latitude;
-		// 	lon += "&lon=" + pos.coords.longitude;
-		// 	console.log(lat, lon);
-		// 	callGeoAPI(); //set API call parameters
-		// 	getOpenWeatherData(); //Get information from API and update HTML
+		function success(pos) {
+			lat += "?lat=" + pos.coords.latitude;
+			lon += "&lon=" + pos.coords.longitude;
+			console.log(lat, lon);
+			callGeoAPI(); //set API call parameters
+			getOpenWeatherData(); //Get information from API and update HTML
 
-		// }
-		// //Get lat and lon, use to create API call with success callback
-		// navigator.geolocation.getCurrentPosition(success);
+		}
+		//Get lat and lon, use to create API call with success callback
+		navigator.geolocation.getCurrentPosition(success);
 
 
 	//Get users Location info - Using FreeGoIP API
 		//Call the FreeGeoIP API for users IP info and then make call to OpenWeather API
-			var freeIP = 'https://crossorigin.me/http://freegeoip.net/json/?callback';
-			$.getJSON(freeIP, function(data) {
-				lat += "?lat=" + data.latitude;
-				lon += "&lon=" + data.longitude;
-				console.log(lat, lon);
-				callGeoAPI(); //set API call parameters
-				getOpenWeatherData(); //Get information from API and update HTML
-			});
+			// var freeIP = 'https://crossorigin.me/http://freegeoip.net/json/?callback';
+			// $.getJSON(freeIP, function(data) {
+			// 	lat += "?lat=" + data.latitude;
+			// 	lon += "&lon=" + data.longitude;
+			// 	console.log(lat, lon);
+			// 	callGeoAPI(); //set API call parameters
+			// 	getOpenWeatherData(); //Get information from API and update HTML
+			// });
 
 
 
