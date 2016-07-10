@@ -314,7 +314,7 @@ $(document).ready(function() {
 
 	//Get users Location info - Using FreeGoIP API
 		//Call the FreeGeoIP API for users IP info and then make call to OpenWeather API
-			var freeIP = 'http://freegeoip.net/json/?callback';
+			var freeIP = 'https://crossorigin.me/http://freegeoip.net/json/?callback';
 			$.getJSON(freeIP, function(data) {
 				lat += "?lat=" + data.latitude;
 				lon += "&lon=" + data.longitude;
