@@ -275,9 +275,6 @@ $(document).ready(function() {
 				});
 			});
 
-			//Small screen collapsed nav
-			$('.navbar-default.navbar-toggle:hover, .navbar-default.navbar-toggle:focus').css('background-color', tempColor);
-
 
 			//Change footer text
 			var tempRange = data.main.temp;
