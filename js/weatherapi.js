@@ -281,15 +281,15 @@ $(document).ready(function() {
 			if (tempRange < 20) {
 				$('.text-muted').html('Error....frozen...');
 			} else if (tempRange >= 20 && tempRange < 40) {
-				$('.text-muted').html('Damn its cold');
+				$('.text-muted').html('Damn its cold today');
 			} else if (tempRange >= 40 && tempRange < 60) {
 				$('.text-muted').html('Brrrrrrr.....');
 			} else if (tempRange >= 60 && tempRange < 80) {
 				$('.text-muted').html('Lovely weather we\'re having');
 			} else if (tempRange >= 80 && tempRange < 90) {
-				$('.text-muted').html('At least its not above 90');
+				$('.text-muted').html('It\'s a bit warm today');
 			} else if (tempRange >= 90 && tempRange < 100) {
-				$('.text-muted').html('Yikes its hot outside!');
+				$('.text-muted').html('Yikes it\'s hot outside!');
 			} else if (tempRange >= 100 && tempRange < 110) {
 				$('.text-muted').html('Danger Will Robinson, you\'re melting!');
 			} else if (tempRange >= 110) {
@@ -300,28 +300,38 @@ $(document).ready(function() {
 	}
 
 	//Get users Location info - Using users browser
-		function success(pos) {
-			lat += "?lat=" + pos.coords.latitude;
-			lon += "&lon=" + pos.coords.longitude;
-			console.log(lat, lon);
-			callGeoAPI(); //set API call parameters
-			getOpenWeatherData(); //Get information from API and update HTML
+		// function success(pos) {
+		// 	lat += "?lat=" + pos.coords.latitude;
+		// 	lon += "&lon=" + pos.coords.longitude;
+		// 	console.log(lat, lon);
+		// 	callGeoAPI(); //set API call parameters
+		// 	getOpenWeatherData(); //Get information from API and update HTML
 
-		}
-		//Get lat and lon, use to create API call with success callback
-		navigator.geolocation.getCurrentPosition(success);
+		// }
+
+			// function error(err) {
+			// 	alert('There was a problem with your request: ' + err + '. Please enter your location.');
+			// }
+		// //Get lat and lon, use to create API call with success callback
+			// if('geolocation' in navigator){
+				// geolocation is supported :)
+				// navigator.geolocation.getCurrentPosition(success, error);
+			// } else {
+				// no geolocation :(
+				// alert('Sorry, looks like your browser doesn\'t support geolocation, please enter your location.');
+			// }
 
 
 	//Get users Location info - Using FreeGoIP API
 		//Call the FreeGeoIP API for users IP info and then make call to OpenWeather API
-			// var freeIP = 'https://crossorigin.me/http://freegeoip.net/json/?callback';
-			// $.getJSON(freeIP, function(data) {
-			// 	lat += "?lat=" + data.latitude;
-			// 	lon += "&lon=" + data.longitude;
-			// 	console.log(lat, lon);
-			// 	callGeoAPI(); //set API call parameters
-			// 	getOpenWeatherData(); //Get information from API and update HTML
-			// });
+			var freeIP = 'https://freegeoip.net/json/?callback';
+			$.getJSON(freeIP, function(data) {
+				lat += "?lat=" + data.latitude;
+				lon += "&lon=" + data.longitude;
+				console.log(lat, lon);
+				callGeoAPI(); //set API call parameters
+				getOpenWeatherData(); //Get information from API and update HTML
+			});
 
 
 
