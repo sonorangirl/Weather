@@ -1,5 +1,5 @@
 
-var base = "https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather";
+var base = "https://api.openweathermap.org/data/2.5/weather";
 var lat = "";
 var lon = "";
 var APIkey = "&appid=392e8e512b039c6ddb7ee382f837b322";
